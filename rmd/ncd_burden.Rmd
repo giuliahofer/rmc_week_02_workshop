@@ -14,16 +14,38 @@ data_ncd <- read_csv(here("data", "burden-of-disease-ncd.csv"))
 # Here render a table for the DALY burden over time for the three countries 
 # You should pivot the data to show each country in a separate column.
 # Use kable() from the knitr package to render the table.
+
+data_ncd_3_countries <- data_ncd %>% filter(Entity %in% c("United States", "India", "Brazil")) %>% rename("DALYs" = "DALYs (Disability-Adjusted Life Years) - Non-communicable diseases - Sex: Both - Age: Age-standardized (Rate)") %>% select(Entity, Year, DALYs)
+
+# Pivot data to wide format
+data_wide <- data_ncd_3_countries %>%
+  pivot_wider(names_from = Entity, values_from = DALYs) # Ensure 'country' and 'DALY' match your column names
+
+# Render the table with kable
+kable(data_wide)
 ```
 
 ## Plot Showing Trends in NCD Burden Over Time 
 
 ```{r}
+# Load the necessary library
+library(ggplot2)
+
+# Plotting the DALY burden over time
+
+ggplot(data = data_ncd_3_countries, aes(x = Year, y = DALYs, color = Entity)) + 
+  geom_line() +
+  labs(title = "Trend of DALY Burden Over Time in non-communicable diseases",
+       x = "Year",
+       y = "DALY Burden",
+       color = "Country") +
+  theme_minimal()
+
+
 # Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
 ```
 
 ## Summary of NCD Burden Findings
 
-Provide a brief analysis based on the data presented in the table and chart. Highlight any significant findings or patterns. About 3 sentences.
-
+Based on the chart presented, there is a clear downward trend in DALY burden for both Brazil and India over the time period shown. The United States, however, exhibits a different pattern, with a decrease in DALY burden until around 2010, followed by a period of fluctuation and an upward trend in recent years. This could indicate an improvement in health outcomes or health interventions in Brazil and India, while the situation in the United States may require further investigation to understand the causes behind the increasing DALY burden.
 

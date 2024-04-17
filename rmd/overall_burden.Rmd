@@ -14,15 +14,39 @@ data_overall <- read_csv(here("data", "burden-of-disease-all-causes.csv"))
 # Here render a table for the DALY burden over time for the three countries 
 # You should pivot the data to show each country in a separate column.
 # Use kable() from the knitr package to render the table.
+
+
+data_overall_countries <- data_overall %>% filter(Entity %in% c("United States", "India", "Brazil")) %>% rename("DALYs" = "DALYs (Disability-Adjusted Life Years) - All causes - Sex: Both - Age: Age-standardized (Rate)") %>% select(Entity, Year, DALYs)
+
+# Pivot data to wide format
+data_wide <- data_overall_countries %>%
+  pivot_wider(names_from = Entity, values_from = DALYs) # Ensure 'country' and 'DALY' match your column names
+
+# Render the table with kable
+kable(data_wide)
+
 ```
 
 ## Plot Showing Trends in Overall Disease Burden Over Time
 
 ```{r}
 # Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+
+# Load the necessary library
+library(ggplot2)
+
+# Plotting the DALY burden over time
+
+ggplot(data = data_overall_countries, aes(x = Year, y = DALYs, color = Entity)) + 
+  geom_line() +
+  labs(title = "Trend of all-cause DALY Burden Over Time",
+       x = "Year",
+       y = "DALY Burden",
+       color = "Country") +
+  theme_minimal()
 ```
 
 ## Summary of Overall Disease Burden Findings
 
-Provide a brief analysis based on the data presented in the table and chart. Highlight any significant findings or patterns. About 3 sentences.
+The chart indicates a significant decrease in the all-cause DALY burden over time for India, showing a strong positive trend in overall health or effectiveness of health interventions. Brazil also shows a declining trend, but with a less steep slope than India, suggesting slower progress. The United States exhibits the lowest DALY burden of the three and maintains a relatively stable level over the years, possibly reflecting an established healthcare system effectively managing the overall health burden.
 

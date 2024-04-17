@@ -14,16 +14,40 @@ data_cmnn <- read_csv(here("data", "burden-of-disease-cmnn.csv"))
 # Here render a table for the DALY burden over time for the three countries 
 # You should pivot the data to show each country in a separate column.
 # Use kable() from the knitr package to render the table.
+
+data_cmnn_countries <- data_cmnn %>% filter(Entity %in% c("United States", "India", "Brazil")) %>% rename("DALYs" = "DALYs (Disability-Adjusted Life Years) - Communicable, maternal, neonatal, and nutritional diseases - Sex: Both - Age: Age-standardized (Rate)") %>% select(Entity, Year, DALYs)
+
+# Pivot data to wide format
+data_wide <- data_cmnn_countries %>%
+  pivot_wider(names_from = Entity, values_from = DALYs) # Ensure 'country' and 'DALY' match your column names
+
+# Render the table with kable
+kable(data_wide)
 ```
 
 ## Plot Showing Trends in CMNN Burden Over Time
 
 ```{r}
 # Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+
+# Load the necessary library
+library(ggplot2)
+
+# Plotting the DALY burden over time
+
+ggplot(data = data_cmnn_countries, aes(x = Year, y = DALYs, color = Entity)) + 
+  geom_line() +
+  labs(title = "Trend of DALY Burden Over Time in communicable diseases",
+       x = "Year",
+       y = "DALY Burden",
+       color = "Country") +
+  theme_minimal()
+
+
 ```
 
 ## Summary of CMNN Burden Findings
 
-Provide a brief analysis based on the data presented in the table and chart. Highlight any significant findings or patterns. About 3 sentences.
+The chart shows a consistent decline in the DALY burden from communicable diseases over time in India, indicating substantial improvements in managing these diseases. Brazil's DALY burden is also decreasing, albeit at a slower rate than India's. Meanwhile, the United States displays a relatively flat trend, suggesting a stable and low DALY burden from communicable diseases throughout the period. This may reflect the impact of sustained public health efforts and healthcare advancements in these regions.
 
 
