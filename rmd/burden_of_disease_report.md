@@ -169,4 +169,6 @@ and maintains a relatively stable level over the years, possibly
 reflecting an established healthcare system effectively managing the
 overall health burden.
 
+## Plot of cumulative DALY burden for the three countries over time, for each of the three burden estimate types
+
 ![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
