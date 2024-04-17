@@ -5,7 +5,7 @@
 pacman::p_load(tidyverse, knitr, here)
 
 # Import the overall disease data
-data_overall <- read_csv(here("data", "burden-of-disease-all-causes.csv"))
+data_overall <- read_csv(here("data", "burden-of-disease-all-causes.csv"),  show_col_types = FALSE)
 ```
 
 ## Table of Estimates for Overall Disease Burden Over Time

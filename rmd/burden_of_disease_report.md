@@ -5,24 +5,15 @@ Giulia Hofer
 # Introduction
 
 This document compares the Disability-Adjusted Life Year (DALY) diseases
-burden for three countries: COUNTRY 1, COUNTRY 2, and COUNTRY 3. We
-compare the burden due to communicable, maternal, neonatal, and
-nutritional diseases (CMNN), non-communicable diseases (NCDs), and
-overall disease burden for these countries.
+burden for three countries: United States, Brazil, and India. We compare
+the burden due to communicable, maternal, neonatal, and nutritional
+diseases (CMNN), non-communicable diseases (NCDs), and overall disease
+burden for these countries.
 
 The source data is from the Institute for Health Metrics and Evaluation
 (IHME) Global Burden of Disease (GBD) study.
 
 # Communicable, Maternal, Neonatal, and Nutritional Disease Burden (CMNN)
-
-    ## Rows: 8100 Columns: 4
-    ## ── Column specification ────────────────────────────────────────────────────────
-    ## Delimiter: ","
-    ## chr (2): Entity, Code
-    ## dbl (2): Year, DALYs (Disability-Adjusted Life Years) - Communicable, matern...
-    ## 
-    ## ℹ Use `spec()` to retrieve the full column specification for this data.
-    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 ## Table of Estimates for CMNN Burden Over Time
 
@@ -65,10 +56,6 @@ The source data is from the Institute for Health Metrics and Evaluation
 
 ## Summary of CMNN Burden Findings
 
-Provide a brief analysis based on the data presented in the table and
-chart. Highlight any significant findings or patterns. About 3
-sentences.
-
 The chart shows a consistent decline in the DALY burden from
 communicable diseases over time in India, indicating substantial
 improvements in managing these diseases. Brazil’s DALY burden is also
@@ -79,15 +66,6 @@ reflect the impact of sustained public health efforts and healthcare
 advancements in these regions.
 
 # Non-Communicable Disease Burden (NCD)
-
-    ## Rows: 8010 Columns: 4
-    ## ── Column specification ────────────────────────────────────────────────────────
-    ## Delimiter: ","
-    ## chr (2): Entity, Code
-    ## dbl (2): Year, DALYs (Disability-Adjusted Life Years) - Non-communicable dis...
-    ## 
-    ## ℹ Use `spec()` to retrieve the full column specification for this data.
-    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 ## Table of Estimates for NCD Burden Over Time
 
@@ -130,10 +108,6 @@ advancements in these regions.
 
 ## Summary of NCD Burden Findings
 
-Provide a brief analysis based on the data presented in the table and
-chart. Highlight any significant findings or patterns. About 3
-sentences.
-
 Based on the chart presented, there is a clear downward trend in DALY
 burden for both Brazil and India over the time period shown. The United
 States, however, exhibits a different pattern, with a decrease in DALY
@@ -144,15 +118,6 @@ situation in the United States may require further investigation to
 understand the causes behind the increasing DALY burden.
 
 # Overall Disease Burden
-
-    ## Rows: 8100 Columns: 4
-    ## ── Column specification ────────────────────────────────────────────────────────
-    ## Delimiter: ","
-    ## chr (2): Entity, Code
-    ## dbl (2): Year, DALYs (Disability-Adjusted Life Years) - All causes - Sex: Bo...
-    ## 
-    ## ℹ Use `spec()` to retrieve the full column specification for this data.
-    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 ## Table of Estimates for Overall Disease Burden Over Time
 
@@ -194,10 +159,6 @@ understand the causes behind the increasing DALY burden.
 ![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 ## Summary of Overall Disease Burden Findings
-
-Provide a brief analysis based on the data presented in the table and
-chart. Highlight any significant findings or patterns. About 3
-sentences.
 
 The chart indicates a significant decrease in the all-cause DALY burden
 over time for India, showing a strong positive trend in overall health
