@@ -22,3 +22,34 @@ The source data is from the Institute for Health Metrics and Evaluation (IHME) G
 
 ```{r child='overall_burden.Rmd'}
 ```
+
+
+## Plot of cumulative DALY burden for the three countries over time, for each of the three burden estimate types
+
+```{r}
+# Load necessary libraries
+library(dplyr)
+
+data_cmnn_countries$burden_type <- 'Communicable'
+data_ncd_3_countries$burden_type <- 'Noncommunicable'
+data_overall_countries$burden_type <- 'All-causes'
+
+data_combined <- bind_rows(data_cmnn_countries, data_ncd_3_countries, data_overall_countries)
+
+# Calculate cumulative DALY for each country and burden type
+data_cumulative <- data_combined %>%
+  group_by(Entity, burden_type) %>%
+  arrange(Entity, burden_type, Year) %>%
+  mutate(cumulative_DALY = cumsum(DALYs))
+
+# Plotting cumulative DALY burden
+ggplot(data = data_cumulative, aes(x = Year, y = cumulative_DALY, color = Entity, group = interaction(Entity, burden_type))) + 
+  geom_line() +
+  facet_wrap(~ burden_type, scales = "free_y") +
+  labs(title = "Cumulative DALY Burden Over Time",
+       x = "Year",
+       y = "Cumulative DALY Burden",
+       color = "Country") +
+  theme_minimal()
+
+```

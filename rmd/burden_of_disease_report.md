@@ -52,7 +52,7 @@ The source data is from the Institute for Health Metrics and Evaluation
 
 ## Plot Showing Trends in CMNN Burden Over Time
 
-![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ## Summary of CMNN Burden Findings
 
@@ -104,7 +104,7 @@ advancements in these regions.
 
 ## Plot Showing Trends in NCD Burden Over Time
 
-![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 ## Summary of NCD Burden Findings
 
@@ -156,7 +156,7 @@ understand the causes behind the increasing DALY burden.
 
 ## Plot Showing Trends in Overall Disease Burden Over Time
 
-![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ## Summary of Overall Disease Burden Findings
 
@@ -168,3 +168,5 @@ progress. The United States exhibits the lowest DALY burden of the three
 and maintains a relatively stable level over the years, possibly
 reflecting an established healthcare system effectively managing the
 overall health burden.
+
+![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
